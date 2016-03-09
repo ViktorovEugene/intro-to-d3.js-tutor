@@ -1,7 +1,3 @@
-/**
- * Created by jeka on 09.03.16.
- */
-
 var sales = [
   { product: 'Hoodie',  count: 7 },
   { product: 'Jacket',  count: 6 },
@@ -9,8 +5,8 @@ var sales = [
 ];
 
 var svg = d3.select('svg')
-    .attr('width', 310)
-    .attr('height', 200)
+    .attr('width', 320)
+    .attr('height', 85)
   .append('g')
     .attr('transform', 'translate(10,10)');
 
@@ -28,7 +24,7 @@ var x = d3.scale.linear()
   .range([0, 300])
   .domain([0, maxCount]);
 var y = d3.scale.ordinal()
-  .rangeRoundBands([30, 105])
+  .rangeRoundBands([0, 75])
   .domain(sales.map(function(d, i) {
     return d.product;
   }));

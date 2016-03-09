@@ -2,10 +2,36 @@
 <html lang="en">
   <head>
     <title>An data bindings</title>
+    <style>
+        .red {
+          fill: red; /* not background-color! */
+        }
+
+        .fancy {
+          fill: none;
+          stroke: black; /* similar to border-color */
+          stroke-width: 1pt; /* similar to border-width */
+          stroke-dasharray: 1,2,5;
+        }
+    </style>
   </head>
   <body>
     <svg></svg>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <p>
+        The next hardcoded rectangles are here for the example, how they are positioning in
+        the svg tag. <br />
+        You should look at the rect tag attributes and compare with the
+        newRects.append('rect').attr() definition in the java script code:
+    </p>
+    <svg width="150" height="150">
+      <rect x="0"  y="0" width="40" height="40"
+        fill="steelBlue" />
+      <rect x="40"  y="40" width="40" height="40"
+        style="fill: steelBlue" />
+      <rect x="80" y="80" width="40" height="40"
+        class="fancy" />
+    </svg>
+    <script src="js/d3.v3.min.js"></script>
     <script type="text/javascript" src="js/data_binding.js"></script>
   </body>
 </html>
