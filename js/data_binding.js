@@ -8,7 +8,12 @@ var sales = [
   { product: 'Snuggie', count: 9 }
 ];
 
-var svg = d3.select('svg');
+var svg = d3.select('svg')
+    .attr('width', 310)
+    .attr('height', 200)
+  .append('g')
+    .attr('transform', 'translate(10,10)');
+
 var rects = svg.selectAll('rect')
   .data(sales);
 
