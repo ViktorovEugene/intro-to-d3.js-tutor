@@ -44,7 +44,8 @@ function update() {
     rects.enter()
         .append('rect');
 
-    rects
+    rects.transition()
+        .duration(1000)
         .attr('x', x(0))
         .attr('y', function(d, i) {
             return y(d.product);
@@ -54,7 +55,9 @@ function update() {
             return x(d.count);
         });
 }
-
 toggle();
-alert('Let\'s toggle again!');
-toggle();
+setTimeout(toggle, 5000);
+setTimeout(toggle, 7000);
+setTimeout(toggle, 9000);
+setTimeout(toggle, 12000);
+setTimeout(toggle, 14000);
