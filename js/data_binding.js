@@ -38,3 +38,13 @@ newRects.append('rect')
   .attr('width', function(d, i) {
     return x(d.count);
   });
+
+/* Removing Elements */
+sales.pop(); //drop the last element
+
+rects = rects.data(sales); // join the data again
+var rectsToRemove = rects.exit();
+
+alert(rectsToRemove.size());
+
+rectsToRemove.remove();
