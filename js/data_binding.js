@@ -23,16 +23,16 @@ days = [
 
 // Create the scales for further visualisation
 var x = d3.scale.linear()
-  .range([0, 300])
-  .domain([0, 20]);
-var y = d3.scale.ordinal()
-  .rangeRoundBands([0, 75])
-  .domain(['Hoodie', 'Jacket', 'Snuggie']);
+      .range([0, 300])
+      .domain([0, 20]);
+    y = d3.scale.ordinal()
+      .rangeRoundBands([0, 75])
+      .domain(['Hoodie', 'Jacket', 'Snuggie']);
 
-function toggle() {
+d3.select('.toggle').on('click', function() {
     sales = (sales == days[0]) ? days[1] : days[0];
     update();
-}
+});
 
 function update() {
     var rects = svg.selectAll('rect')
@@ -55,9 +55,3 @@ function update() {
             return x(d.count);
         });
 }
-toggle();
-setTimeout(toggle, 5000);
-setTimeout(toggle, 7000);
-setTimeout(toggle, 9000);
-setTimeout(toggle, 12000);
-setTimeout(toggle, 14000);
